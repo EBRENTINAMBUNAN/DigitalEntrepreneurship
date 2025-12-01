@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BuatAja - Jasa Pembuatan Website</title>
+    <meta
+      name="description"
+      content="Toko Online Jasa Pembuatan Website dengan Front-End Interaktif"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1e40af",
+              secondary: "#2563eb",
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+    <!-- Header -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-yH1A0gYmk6I6ZgXbJkC8GmB8RkGlmFjIedZuC6pbbAxQ+y+jv0G1F6SuAF9bG3s9+jqIF+8xhnKzPbkMGY+h9g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <header class="bg-primary text-white py-4 shadow sticky top-0 z-50">
+      <div
+        class="container mx-auto flex flex-wrap justify-between items-center px-4"
+      >
+        <div class="flex items-center gap-3">
+          <i class="fas fa-globe text-2xl"></i>
+          <h1 class="text-2xl font-extrabold tracking-tight">BuatAja</h1>
+        </div>
+        <button
+          id="menu-toggle"
+          class="md:hidden text-white focus:outline-none"
+        >
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+        <nav
+          id="nav-menu"
+          class="hidden md:flex md:items-center md:space-x-6 text-sm w-full md:w-auto mt-4 md:mt-0"
+        >
+          <a
+            href="#produk"
+            class="hover:underline block md:inline-block py-2 px-3"
+          >
+            <i class="fas fa-box-open mr-1"></i> Produk
+          </a>
+          <a
+            href="#testimoni"
+            class="hover:underline block md:inline-block py-2 px-3"
+          >
+            <i class="fas fa-comment-dots mr-1"></i> Testimoni
+          </a>
+          <a
+            href="#kontak"
+            class="hover:underline block md:inline-block py-2 px-3"
+          >
+            <i class="fas fa-envelope mr-1"></i> Kontak
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const navMenu = document.getElementById("nav-menu");
+
+      menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("hidden");
+      });
+    </script>
+
+    <!-- Hero Section -->
+    <section class="bg-blue-100 py-10 px-6 relative overflow-hidden">
+      <div
+        class="absolute top-0 right-0 w-72 h-72 bg-blue-200 rounded-full opacity-30 blur-3xl transform translate-x-1/2 -translate-y-1/2"
+      ></div>
+      <div
+        class="absolute bottom-0 left-0 w-96 h-96 bg-blue-300 rounded-full opacity-20 blur-3xl transform -translate-x-1/2 translate-y-1/2"
+      ></div>
+
+      <div
+        class="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between md:gap-12 gap-4 relative z-10"
+      >
+        <!-- Text -->
+        <div class="w-full md:w-1/2 text-center md:text-left px-2">
+          <h2 class="text-3xl sm:text-4xl font-extrabold mb-2 leading-tight">
+            Bangun Website <span class="text-primary">Impian</span> Anda
+          </h2>
+          <p class="text-base text-gray-700 mb-4">
+            Dapatkan website profesional dengan tampilan modern, SEO friendly,
+            dan fitur lengkap. Cocok untuk UMKM, Startup, dan Personal Branding.
+          </p>
+          <div
+            class="flex flex-col sm:flex-row justify-center md:justify-start gap-3"
+          >
+            <a
+              href="#produk"
+              class="bg-secondary hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition shadow text-sm"
+            >
+              Lihat Paket
+            </a>
+            <a
+              href="#kontak"
+              class="bg-white text-secondary border border-secondary hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg transition shadow text-sm"
+            >
+              Konsultasi Gratis
+            </a>
+          </div>
+        </div>
+
+        <!-- Gambar -->
+        <div class="w-full md:w-1/2 flex justify-center">
+          <img
+            src="assets/img/hero.png"
+            alt="Ilustrasi Pembuatan Website"
+            class="rounded-full shadow-xl max-w-[90%] sm:max-w-full"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Produk Section -->
+    <section id="produk" class="py-20 px-6 max-w-6xl mx-auto">
+      <h3 class="text-3xl font-extrabold text-center mb-4">Paket Website</h3>
+      <p class="text-center text-gray-600 mb-12">
+        Pilih paket sesuai kebutuhan bisnis Anda. Semua paket dilengkapi dengan
+        desain profesional, fitur lengkap, dan support penuh.
+      </p>
+
+      <div
+        class="grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+        id="produk-list"
+      >
+        <!-- Produk akan ditambahkan oleh JavaScript -->
+      </div>
+    </section>
+
+    <!-- Modal Form -->
+    <div
+      id="form-modal"
+      class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50"
+    >
+      <div class="bg-white rounded-xl shadow-lg max-w-lg w-full p-6 relative">
+        <button
+          id="close-modal"
+          class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl"
+        >
+          &times;
+        </button>
+        <h3 class="text-xl font-bold mb-4">Form Pemesanan</h3>
+        <form id="order-form" class="space-y-4">
+          <input
+            type="text"
+            name="nama"
+            id="nama"
+            placeholder="Nama Anda"
+            required
+            class="w-full border p-3 rounded"
+          />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Email"
+            required
+            class="w-full border p-3 rounded"
+          />
+          <input
+            type="text"
+            name="paket"
+            id="paket-terpilih"
+            readonly
+            class="w-full border p-3 rounded bg-gray-100"
+          />
+          <textarea
+            name="catatan"
+            id="catatan"
+            placeholder="Catatan Tambahan (opsional)"
+            rows="3"
+            class="w-full border p-3 rounded"
+          ></textarea>
+          <button
+            type="submit"
+            class="w-full bg-secondary text-white py-3 rounded font-semibold hover:bg-blue-700"
+          >
+            Kirim Pesanan
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Vanilla JS: Dynamic Produk Cards -->
+    <script>
+      const produk = [
+        {
+          nama: "Website Basic",
+          deskripsi: "Landing page atau portofolio pribadi.",
+          fitur: ["1 Halaman", "Responsive", "Gratis Domain"],
+          harga: "Rp 999.000",
+          badge: "Hemat",
+        },
+        {
+          nama: "Website Bisnis",
+          deskripsi: "Untuk UMKM & bisnis kecil.",
+          fitur: ["5 Halaman", "SEO Basic", "Formulir Kontak"],
+          harga: "Rp 2.500.000",
+          badge: "Best Seller",
+        },
+        {
+          nama: "Toko Online",
+          deskripsi: "Ecommerce lengkap dengan keranjang.",
+          fitur: [
+            "Produk Tak Terbatas",
+            "Pembayaran Online",
+            "Dashboard Admin",
+          ],
+          harga: "Rp 5.000.000",
+          badge: "Paling Lengkap",
+        },
+      ];
+
+      const produkList = document.getElementById("produk-list");
+      const formModal = document.getElementById("form-modal");
+      const closeModal = document.getElementById("close-modal");
+      const paketTerpilih = document.getElementById("paket-terpilih");
+
+      produk.forEach((item) => {
+        const card = document.createElement("div");
+        card.className =
+          "bg-white p-6 rounded-2xl border border-gray-200 shadow-lg hover:-translate-y-1 hover:shadow-xl transition-transform duration-300 relative";
+
+        card.innerHTML = `
+      <span class="absolute top-4 right-4 bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full shadow">${
+        item.badge
+      }</span>
+      <div class="mb-4">
+        <img src="https://source.unsplash.com/400x250/?technology,web" alt="${
+          item.nama
+        }" class="w-full rounded-xl mb-4 object-cover shadow">
+        <h4 class="text-xl font-bold mb-1">${item.nama}</h4>
+        <p class="text-sm text-gray-500 mb-3">${item.deskripsi}</p>
+      </div>
+      <ul class="text-sm text-gray-700 mb-4 space-y-2">
+        ${item.fitur
+          .map(
+            (f) =>
+              `<li class="flex items-center gap-2"><i class='fas fa-check text-green-500'></i> ${f}</li>`
+          )
+          .join("")}
+      </ul>
+      <p class="text-xl font-bold text-secondary mb-4">${item.harga}</p>
+      <button class="w-full bg-secondary text-white py-2 rounded-lg hover:bg-blue-700 transition font-semibold" onclick="openForm('${
+        item.nama
+      }')">Pesan Sekarang</button>
+    `;
+
+        produkList.appendChild(card);
+      });
+
+      function openForm(namaPaket) {
+        paketTerpilih.value = namaPaket;
+        formModal.classList.remove("hidden");
+        formModal.classList.add("flex");
+      }
+
+      closeModal.addEventListener("click", () => {
+        formModal.classList.add("hidden");
+        formModal.classList.remove("flex");
+      });
+
+      // Redirect to WhatsApp with form message
+      document
+        .getElementById("order-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const nama = document.getElementById("nama").value.trim();
+          const email = document.getElementById("email").value.trim();
+          const paket = document.getElementById("paket-terpilih").value;
+          const catatan = document.getElementById("catatan").value.trim();
+
+          const message = `Halo, saya ingin memesan paket *${paket}*%0A
+Nama: ${nama}%0AEmail: ${email}%0ACatatan: ${catatan || "-"}%0A`;
+
+          const nomorWA = "62895391649238"; // ganti dengan nomor WA Anda (gunakan format internasional, tanpa tanda +)
+          const waURL = `https://wa.me/${nomorWA}?text=${encodeURI(message)}`;
+
+          window.open(waURL, "_blank");
+        });
+    </script>
+
+    <!-- Testimoni Section -->
+    <section id="testimoni" class="py-20 px-6 bg-gray-100">
+      <div class="max-w-5xl mx-auto text-center">
+        <h3 class="text-2xl font-bold mb-10">Apa Kata Klien Kami</h3>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-white p-6 rounded-lg shadow text-left">
+            <p class="text-gray-700 italic">
+              "Layanan cepat dan profesional. Website saya selesai hanya dalam 4
+              hari!"
+            </p>
+            <p class="mt-4 font-semibold">— Andi, UMKM</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow text-left">
+            <p class="text-gray-700 italic">
+              "Desain keren dan mudah dikelola. Recommended!"
+            </p>
+            <p class="mt-4 font-semibold">— Rina, Freelancer</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontak Section -->
+    <section id="kontak" class="py-20 px-6 bg-white">
+      <div class="max-w-xl mx-auto">
+        <h3 class="text-2xl font-bold text-center mb-4">Hubungi Kami</h3>
+        <form class="space-y-4">
+          <input
+            type="text"
+            placeholder="Nama Anda"
+            class="w-full p-3 border rounded"
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            class="w-full p-3 border rounded"
+          />
+          <textarea
+            placeholder="Pesan Anda"
+            rows="4"
+            class="w-full p-3 border rounded"
+          ></textarea>
+          <button
+            type="submit"
+            class="w-full bg-secondary text-white py-3 rounded hover:bg-blue-700"
+          >
+            Kirim Pesan
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white text-center py-6 text-sm">
+      <div class="flex justify-center space-x-4 mb-2">
+        <a href="#" class="hover:underline">WhatsApp</a>
+        <a href="#" class="hover:underline">Instagram</a>
+        <a href="#" class="hover:underline">Email</a>
+      </div>
+      <p>&copy; 2025 WebsiteProStore. All rights reserved.</p>
+    </footer>
+
+    <script
+      src="https://kit.fontawesome.com/3f8ab955ad.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

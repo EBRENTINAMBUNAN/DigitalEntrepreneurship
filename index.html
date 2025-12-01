@@ -96,7 +96,7 @@
     </script>
 
     <!-- Hero Section -->
-    <section class="bg-blue-100 py-10 px-6 relative overflow-hidden">
+    <section id="hero" class="bg-blue-100 py-10 px-6 relative overflow-hidden">
       <div
         class="absolute top-0 right-0 w-72 h-72 bg-blue-200 rounded-full opacity-30 blur-3xl transform translate-x-1/2 -translate-y-1/2"
       ></div>
@@ -141,6 +141,61 @@
             alt="Ilustrasi Pembuatan Website"
             class="rounded-full shadow-xl max-w-[90%] sm:max-w-full"
           />
+        </div>
+      </div>
+    </section>
+
+    <!-- Keterangan Fiktif -->
+    <section
+      class="bg-yellow-50 border-t border-yellow-300 py-6 px-6 text-center text-sm text-yellow-800"
+    >
+      <p>
+        <strong>Disclaimer:</strong> Website ini adalah <em>fiktif</em> dan
+        dibuat oleh <strong>Ebren Tinambunan</strong> untuk memenuhi tugas dari
+        mata kuliah <strong>Digital Entrepreneurship</strong>.
+      </p>
+    </section>
+
+    <!-- Tentang BuatAja Section -->
+    <section id="tentang" class="py-20 px-6 bg-white">
+      <div
+        class="max-w-6xl mx-auto text-center md:text-left md:flex md:items-center md:gap-12"
+      >
+        <div class="md:w-1/2 mb-8 md:mb-0">
+          <img
+            src="assets/img/logo.png"
+            alt="Tentang Kami"
+            class="rounded-xl shadow-md w-full"
+          />
+        </div>
+        <div class="md:w-1/2">
+          <h3 class="text-3xl font-extrabold mb-4 text-primary">
+            Tentang <span class="text-secondary">BuatAja</span>
+          </h3>
+          <p class="text-gray-700 mb-4 leading-relaxed">
+            <strong>BuatAja</strong> adalah tim kreatif yang berfokus pada
+            pengembangan website profesional, modern, dan fungsional untuk
+            berbagai kebutuhan bisnis, personal, maupun institusi.
+          </p>
+          <p class="text-gray-700 mb-4">
+            Kami percaya bahwa website bukan hanya tampilan, tapi juga alat
+            komunikasi, penjualan, dan representasi identitas digital yang harus
+            optimal.
+          </p>
+          <ul class="text-gray-700 space-y-2 text-left">
+            <li>
+              <i class="fas fa-check-circle text-green-500 mr-2"></i> Tim
+              berpengalaman dan kreatif
+            </li>
+            <li>
+              <i class="fas fa-check-circle text-green-500 mr-2"></i> Desain
+              responsif & SEO-ready
+            </li>
+            <li>
+              <i class="fas fa-check-circle text-green-500 mr-2"></i> Proses
+              cepat & dukungan penuh
+            </li>
+          </ul>
         </div>
       </div>
     </section>
@@ -260,7 +315,7 @@
         item.badge
       }</span>
       <div class="mb-4">
-        <img src="https://source.unsplash.com/400x250/?technology,web" alt="${
+        <img src="assets/img/PaketWebBasic.png" alt="${
           item.nama
         }" class="w-full rounded-xl mb-4 object-cover shadow">
         <h4 class="text-xl font-bold mb-1">${item.nama}</h4>
@@ -305,11 +360,15 @@
           const paket = document.getElementById("paket-terpilih").value;
           const catatan = document.getElementById("catatan").value.trim();
 
-          const message = `Halo, saya ingin memesan paket *${paket}*%0A
-Nama: ${nama}%0AEmail: ${email}%0ACatatan: ${catatan || "-"}%0A`;
+          const message = `Halo, saya ingin memesan paket *${paket}*
+Nama: ${nama}
+Email: ${email}
+Catatan: ${catatan || "-"}`;
 
-          const nomorWA = "62895391649238"; // ganti dengan nomor WA Anda (gunakan format internasional, tanpa tanda +)
-          const waURL = `https://wa.me/${nomorWA}?text=${encodeURI(message)}`;
+          const nomorWA = "62895391649238"; // format internasional tanpa +
+          const waURL = `https://wa.me/${nomorWA}?text=${encodeURIComponent(
+            message
+          )}`;
 
           window.open(waURL, "_blank");
         });
@@ -317,21 +376,74 @@ Nama: ${nama}%0AEmail: ${email}%0ACatatan: ${catatan || "-"}%0A`;
 
     <!-- Testimoni Section -->
     <section id="testimoni" class="py-20 px-6 bg-gray-100">
-      <div class="max-w-5xl mx-auto text-center">
-        <h3 class="text-2xl font-bold mb-10">Apa Kata Klien Kami</h3>
-        <div class="grid md:grid-cols-2 gap-8">
-          <div class="bg-white p-6 rounded-lg shadow text-left">
-            <p class="text-gray-700 italic">
-              "Layanan cepat dan profesional. Website saya selesai hanya dalam 4
-              hari!"
+      <div class="max-w-6xl mx-auto text-center">
+        <h3 class="text-3xl font-extrabold mb-4">Apa Kata Klien Kami</h3>
+        <p class="text-gray-600 mb-12">
+          Testimoni nyata dari klien yang telah menggunakan jasa kami untuk
+          membangun kehadiran digital mereka.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-8 md:gap-12">
+          <!-- Testimoni 1 -->
+          <div class="bg-white p-6 rounded-2xl shadow-md text-left relative">
+            <i class="fas fa-quote-left text-2xl text-blue-500 mb-4 block"></i>
+            <p class="text-gray-700 italic mb-6">
+              “Layanan cepat dan profesional. Website saya selesai hanya dalam 4
+              hari!”
             </p>
-            <p class="mt-4 font-semibold">— Andi, UMKM</p>
+            <div class="flex items-center gap-4">
+              <img
+                src="https://i.pravatar.cc/100?img=11"
+                alt="Andi"
+                class="w-12 h-12 rounded-full border border-gray-300"
+              />
+              <div>
+                <p class="font-bold">Andi</p>
+                <p class="text-sm text-gray-500">Pelaku UMKM</p>
+              </div>
+            </div>
           </div>
-          <div class="bg-white p-6 rounded-lg shadow text-left">
-            <p class="text-gray-700 italic">
-              "Desain keren dan mudah dikelola. Recommended!"
+
+          <!-- Testimoni 2 -->
+          <div class="bg-white p-6 rounded-2xl shadow-md text-left relative">
+            <i class="fas fa-quote-left text-2xl text-blue-500 mb-4 block"></i>
+            <p class="text-gray-700 italic mb-6">
+              “Desainnya keren dan mudah dikelola. Recommended banget buat
+              freelancer kayak saya.”
             </p>
-            <p class="mt-4 font-semibold">— Rina, Freelancer</p>
+            <div class="flex items-center gap-4">
+              <img
+                src="https://i.pravatar.cc/100?img=32"
+                alt="Rina"
+                class="w-12 h-12 rounded-full border border-gray-300"
+              />
+              <div>
+                <p class="font-bold">Rina</p>
+                <p class="text-sm text-gray-500">Freelancer</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimoni 3 -->
+          <div
+            class="bg-white p-6 rounded-2xl shadow-md text-left relative md:col-span-2"
+          >
+            <i class="fas fa-quote-left text-2xl text-blue-500 mb-4 block"></i>
+            <p class="text-gray-700 italic mb-6">
+              “Paket toko online-nya sangat lengkap. Sistem pembayaran,
+              dashboard, dan tampilannya sangat memudahkan operasional harian.”
+            </p>
+            <div class="flex items-center gap-4">
+              <img
+                src="https://i.pravatar.cc/100?img=7"
+                alt="Budi"
+                class="w-12 h-12 rounded-full border border-gray-300"
+              />
+              <div>
+                <p class="font-bold">Budi</p>
+                <p class="text-sm text-gray-500">Pemilik Toko Online</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -368,13 +480,75 @@ Nama: ${nama}%0AEmail: ${email}%0ACatatan: ${catatan || "-"}%0A`;
     </section>
 
     <!-- Footer -->
-    <footer class="bg-primary text-white text-center py-6 text-sm">
-      <div class="flex justify-center space-x-4 mb-2">
-        <a href="#" class="hover:underline">WhatsApp</a>
-        <a href="#" class="hover:underline">Instagram</a>
-        <a href="#" class="hover:underline">Email</a>
+    <footer class="bg-primary text-white text-sm">
+      <div
+        class="max-w-6xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10"
+      >
+        <!-- Kolom 1: Logo dan deskripsi -->
+        <div>
+          <h4 class="text-xl font-bold mb-2">BuatAja</h4>
+          <p class="text-gray-300">
+            Merupakan layanan pembuatan website profesional dan terjangkau. Kami
+            bantu Anda membangun kehadiran online yang efektif.
+          </p>
+        </div>
+
+        <!-- Kolom 2: Navigasi -->
+        <div>
+          <h5 class="text-lg font-semibold mb-2">Navigasi</h5>
+          <ul class="space-y-1">
+            <li><a href="#hero" class="hover:underline">Beranda</a></li>
+            <li><a href="#produk" class="hover:underline">Paket Website</a></li>
+            <li><a href="#testimoni" class="hover:underline">Testimoni</a></li>
+            <li><a href="#kontak" class="hover:underline">Kontak</a></li>
+          </ul>
+        </div>
+
+        <!-- Kolom 3: Kontak dan Sosial -->
+        <div>
+          <h5 class="text-lg font-semibold mb-2">Hubungi Kami</h5>
+          <p class="mb-2">
+            Email:
+            <a href="mailto:bendev403@gmail.com" class="underline"
+              >admin@buataja.web.id</a
+            >
+          </p>
+          <p class="mb-4">
+            WA:
+            <a href="https://wa.me/62895391649238" class="underline"
+              >+62 895-3916-49238</a
+            >
+          </p>
+          <div class="flex gap-4 mt-2">
+            <a
+              href="https://wa.me/62895391649238"
+              target="_blank"
+              class="hover:text-green-400 transition"
+            >
+              <i class="fab fa-whatsapp fa-lg"></i>
+            </a>
+            <a
+              href="https://instagram.com/bendev403"
+              target="_blank"
+              class="hover:text-pink-300 transition"
+            >
+              <i class="fab fa-instagram fa-lg"></i>
+            </a>
+            <a
+              href="mailto:bendev403@gmail.com"
+              class="hover:text-blue-300 transition"
+            >
+              <i class="fas fa-envelope fa-lg"></i>
+            </a>
+          </div>
+        </div>
       </div>
-      <p>&copy; 2025 WebsiteProStore. All rights reserved.</p>
+
+      <div
+        class="text-center border-t border-white/20 py-4 mt-6 text-xs text-gray-300"
+      >
+        &copy; 2025 BuatAja. All rights reserved.
+      </div>
     </footer>
 
     <script
